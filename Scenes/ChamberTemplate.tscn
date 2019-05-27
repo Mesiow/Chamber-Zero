@@ -1,0 +1,775 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/light.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Acid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/NonShootablePlatform.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 1.3, 1.6, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 0.352941 ), Color( 1, 1, 1, 0.196078 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Chamber" type="Node"]
+
+[node name="backgroundColor" type="ColorRect" parent="."]
+margin_left = 10.0
+margin_top = -20.0
+margin_right = 1943.0
+margin_bottom = 1070.0
+color = Color( 0.223529, 0.223529, 0.223529, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RoomLight" type="Light2D" parent="."]
+position = Vector2( 960, 792.8 )
+scale = Vector2( 6.53333, 1.88533 )
+texture = ExtResource( 1 )
+color = Color( 0.0156863, 0.490196, 0.0352941, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LevelNmber" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NumberFade" type="AnimationPlayer" parent="LevelNmber"]
+anims/Fade = SubResource( 1 )
+
+[node name="AcidContainer" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Area2D" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 440, 1050 )
+
+[node name="Area2D2" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 490, 1050 )
+
+[node name="Area2D3" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 540, 1050 )
+
+[node name="Area2D4" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 390, 1050 )
+
+[node name="Area2D5" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 340, 1050 )
+
+[node name="Area2D6" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 140, 1050 )
+
+[node name="Area2D7" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 590, 1050 )
+
+[node name="Area2D8" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 290, 1050 )
+
+[node name="Area2D9" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 240, 1050 )
+
+[node name="Area2D10" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 190, 1050 )
+
+[node name="Area2D11" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 640, 1050 )
+
+[node name="Area2D14" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1240, 1050 )
+
+[node name="Area2D26" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1740, 1050 )
+
+[node name="Area2D36" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1840, 1050 )
+
+[node name="Area2D38" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1890, 1050 )
+
+[node name="Area2D37" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1790, 1050 )
+
+[node name="Area2D27" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1690, 1050 )
+
+[node name="Area2D28" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1640, 1050 )
+
+[node name="Area2D29" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1590, 1050 )
+
+[node name="Area2D30" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1540, 1050 )
+
+[node name="Area2D31" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1490, 1050 )
+
+[node name="Area2D32" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1440, 1050 )
+
+[node name="Area2D33" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1390, 1050 )
+
+[node name="Area2D34" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1340, 1050 )
+
+[node name="Area2D35" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1290, 1050 )
+
+[node name="Area2D15" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1190, 1050 )
+
+[node name="Area2D16" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1140, 1050 )
+
+[node name="Area2D17" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1090, 1050 )
+
+[node name="Area2D18" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 1040, 1050 )
+
+[node name="Area2D19" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 990, 1050 )
+
+[node name="Area2D20" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 940, 1050 )
+
+[node name="Area2D21" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 890, 1050 )
+
+[node name="Area2D22" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 840, 1050 )
+
+[node name="Area2D23" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 790, 1050 )
+
+[node name="Area2D24" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 740, 1050 )
+
+[node name="Area2D25" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 690, 1050 )
+
+[node name="Area2D12" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 90, 1050 )
+
+[node name="Area2D13" parent="AcidContainer" instance=ExtResource( 2 )]
+position = Vector2( 40, 1050 )
+
+[node name="NonShootablePlatformContainer" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="NonShootablePlatform" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 194, -4 )
+
+[node name="NonShootablePlatform64" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1844, -4 )
+
+[node name="NonShootablePlatform95" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1904, -4 )
+
+[node name="NonShootablePlatform2" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 660, 1090 )
+
+[node name="NonShootablePlatform136" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1560, 1090 )
+
+[node name="NonShootablePlatform183" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 945.6, -4 )
+
+[node name="NonShootablePlatform8" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 630, 1090 )
+
+[node name="NonShootablePlatform130" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1530, 1090 )
+
+[node name="NonShootablePlatform174" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 915.6, -4 )
+
+[node name="NonShootablePlatform9" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 600, 1090 )
+
+[node name="NonShootablePlatform132" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1500, 1090 )
+
+[node name="NonShootablePlatform178" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 885.6, -4 )
+
+[node name="NonShootablePlatform10" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 570, 1090 )
+
+[node name="NonShootablePlatform137" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1470, 1090 )
+
+[node name="NonShootablePlatform179" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 855.6, -4 )
+
+[node name="NonShootablePlatform11" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 540, 1090 )
+
+[node name="NonShootablePlatform131" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1440, 1090 )
+
+[node name="NonShootablePlatform175" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 825.6, -4 )
+
+[node name="NonShootablePlatform12" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 510, 1090 )
+
+[node name="NonShootablePlatform133" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1410, 1090 )
+
+[node name="NonShootablePlatform177" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 795.6, -4 )
+
+[node name="NonShootablePlatform13" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 480, 1090 )
+
+[node name="NonShootablePlatform134" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1380, 1090 )
+
+[node name="NonShootablePlatform181" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 765.6, -4 )
+
+[node name="NonShootablePlatform14" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 450, 1090 )
+
+[node name="NonShootablePlatform135" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1350, 1090 )
+
+[node name="NonShootablePlatform180" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 735.6, -4 )
+
+[node name="NonShootablePlatform15" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 420, 1090 )
+
+[node name="NonShootablePlatform144" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1320, 1090 )
+
+[node name="NonShootablePlatform176" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 705.6, -4 )
+
+[node name="NonShootablePlatform16" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 390, 1090 )
+
+[node name="NonShootablePlatform148" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1290, 1090 )
+
+[node name="NonShootablePlatform168" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 675.6, -4 )
+
+[node name="NonShootablePlatform17" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 360, 1090 )
+
+[node name="NonShootablePlatform145" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1260, 1090 )
+
+[node name="NonShootablePlatform167" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 646, -4 )
+
+[node name="NonShootablePlatform18" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 330, 1090 )
+
+[node name="NonShootablePlatform141" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1230, 1090 )
+
+[node name="NonShootablePlatform182" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 615.6, -4 )
+
+[node name="NonShootablePlatform184" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 494, -4 )
+
+[node name="NonShootablePlatform188" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 344, -4 )
+
+[node name="NonShootablePlatform193" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 104, -4 )
+
+[node name="NonShootablePlatform194" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 132.8, -4 )
+
+[node name="NonShootablePlatform195" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 224, -4 )
+
+[node name="NonShootablePlatform196" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 254, -4 )
+
+[node name="NonShootablePlatform197" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 284, -4 )
+
+[node name="NonShootablePlatform198" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 314, -4 )
+
+[node name="NonShootablePlatform189" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 374, -4 )
+
+[node name="NonShootablePlatform190" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 404, -4 )
+
+[node name="NonShootablePlatform191" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 432.8, -4 )
+
+[node name="NonShootablePlatform192" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 464, -4 )
+
+[node name="NonShootablePlatform185" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 524, -4 )
+
+[node name="NonShootablePlatform186" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 554, -4 )
+
+[node name="NonShootablePlatform187" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 584, -4 )
+
+[node name="NonShootablePlatform19" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 300, 1090 )
+
+[node name="NonShootablePlatform140" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1200, 1090 )
+
+[node name="NonShootablePlatform20" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 270, 1090 )
+
+[node name="NonShootablePlatform139" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1170, 1090 )
+
+[node name="NonShootablePlatform21" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 240, 1090 )
+
+[node name="NonShootablePlatform150" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1140, 1090 )
+
+[node name="NonShootablePlatform22" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 210, 1090 )
+
+[node name="NonShootablePlatform146" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1110, 1090 )
+
+[node name="NonShootablePlatform23" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 180, 1090 )
+
+[node name="NonShootablePlatform151" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1080, 1090 )
+
+[node name="NonShootablePlatform24" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 150, 1090 )
+
+[node name="NonShootablePlatform138" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1050, 1090 )
+
+[node name="NonShootablePlatform25" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 120, 1090 )
+
+[node name="NonShootablePlatform149" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1020, 1090 )
+
+[node name="NonShootablePlatform26" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 90, 1090 )
+
+[node name="NonShootablePlatform142" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 990, 1090 )
+
+[node name="NonShootablePlatform27" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 60, 1090 )
+
+[node name="NonShootablePlatform147" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 960, 1090 )
+
+[node name="NonShootablePlatform28" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 30, 1090 )
+
+[node name="NonShootablePlatform143" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 930, 1090 )
+
+[node name="NonShootablePlatform29" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 1070 )
+
+[node name="NonShootablePlatform30" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 1039.22 )
+
+[node name="NonShootablePlatform31" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 1010 )
+
+[node name="NonShootablePlatform68" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 1010 )
+
+[node name="NonShootablePlatform117" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 1040 )
+
+[node name="NonShootablePlatform32" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 980 )
+
+[node name="NonShootablePlatform73" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 980 )
+
+[node name="NonShootablePlatform113" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1920, 1090 )
+
+[node name="NonShootablePlatform160" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1305.6, -4 )
+
+[node name="NonShootablePlatform33" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 950 )
+
+[node name="NonShootablePlatform74" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 950 )
+
+[node name="NonShootablePlatform107" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1890, 1090 )
+
+[node name="NonShootablePlatform161" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1275.6, -4 )
+
+[node name="NonShootablePlatform34" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 920 )
+
+[node name="NonShootablePlatform75" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 920 )
+
+[node name="NonShootablePlatform108" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 164, -4 )
+
+[node name="NonShootablePlatform35" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 890 )
+
+[node name="NonShootablePlatform66" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 890 )
+
+[node name="NonShootablePlatform97" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 74, -4 )
+
+[node name="NonShootablePlatform199" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 44, -4 )
+
+[node name="NonShootablePlatform200" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 14.4, -4 )
+
+[node name="NonShootablePlatform201" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, -10 )
+
+[node name="NonShootablePlatform36" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 170 )
+
+[node name="NonShootablePlatform67" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 170 )
+
+[node name="NonShootablePlatform111" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1694, -4 )
+
+[node name="NonShootablePlatform37" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 860 )
+
+[node name="NonShootablePlatform71" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 860 )
+
+[node name="NonShootablePlatform123" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 900, 1090 )
+
+[node name="NonShootablePlatform155" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1800, 1090 )
+
+[node name="NonShootablePlatform173" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1185.6, -4 )
+
+[node name="NonShootablePlatform38" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 830 )
+
+[node name="NonShootablePlatform69" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 830 )
+
+[node name="NonShootablePlatform112" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 870, 1090 )
+
+[node name="NonShootablePlatform152" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1770, 1090 )
+
+[node name="NonShootablePlatform164" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1155.6, -4 )
+
+[node name="NonShootablePlatform39" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 800 )
+
+[node name="NonShootablePlatform70" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 800 )
+
+[node name="NonShootablePlatform122" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 840, 1090 )
+
+[node name="NonShootablePlatform154" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1740, 1090 )
+
+[node name="NonShootablePlatform165" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1125.6, -4 )
+
+[node name="NonShootablePlatform40" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 770 )
+
+[node name="NonShootablePlatform72" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 770 )
+
+[node name="NonShootablePlatform120" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 810, 1090 )
+
+[node name="NonShootablePlatform156" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1710, 1090 )
+
+[node name="NonShootablePlatform170" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1095.6, -4 )
+
+[node name="NonShootablePlatform41" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 740 )
+
+[node name="NonShootablePlatform86" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 740 )
+
+[node name="NonShootablePlatform126" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 780, 1090 )
+
+[node name="NonShootablePlatform158" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1680, 1090 )
+
+[node name="NonShootablePlatform171" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1065.6, -4 )
+
+[node name="NonShootablePlatform42" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 710 )
+
+[node name="NonShootablePlatform93" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 710 )
+
+[node name="NonShootablePlatform128" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 690, 1090 )
+
+[node name="NonShootablePlatform157" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1590, 1090 )
+
+[node name="NonShootablePlatform172" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 975.6, -4 )
+
+[node name="NonShootablePlatform43" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 680 )
+
+[node name="NonShootablePlatform89" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 680 )
+
+[node name="NonShootablePlatform104" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 720, 1090 )
+
+[node name="NonShootablePlatform153" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1620, 1090 )
+
+[node name="NonShootablePlatform169" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1005.6, -4 )
+
+[node name="NonShootablePlatform44" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 650 )
+
+[node name="NonShootablePlatform77" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 650 )
+
+[node name="NonShootablePlatform127" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 750, 1090 )
+
+[node name="NonShootablePlatform159" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1650, 1090 )
+
+[node name="NonShootablePlatform166" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1035.6, -4 )
+
+[node name="NonShootablePlatform45" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 620 )
+
+[node name="NonShootablePlatform80" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 620 )
+
+[node name="NonShootablePlatform102" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1830, 1090 )
+
+[node name="NonShootablePlatform163" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1215.6, -4 )
+
+[node name="NonShootablePlatform46" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 590 )
+
+[node name="NonShootablePlatform83" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 590 )
+
+[node name="NonShootablePlatform103" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1860, 1090 )
+
+[node name="NonShootablePlatform162" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1245.6, -4 )
+
+[node name="NonShootablePlatform47" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 560 )
+
+[node name="NonShootablePlatform84" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 560 )
+
+[node name="NonShootablePlatform124" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1932.8, 1070 )
+
+[node name="NonShootablePlatform48" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 530 )
+
+[node name="NonShootablePlatform87" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 530 )
+
+[node name="NonShootablePlatform114" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1336, -4 )
+
+[node name="NonShootablePlatform49" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 500 )
+
+[node name="NonShootablePlatform79" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 500 )
+
+[node name="NonShootablePlatform118" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1366, -4 )
+
+[node name="NonShootablePlatform50" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 470 )
+
+[node name="NonShootablePlatform78" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 470 )
+
+[node name="NonShootablePlatform109" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1396, -4 )
+
+[node name="NonShootablePlatform51" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 440 )
+
+[node name="NonShootablePlatform82" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 440 )
+
+[node name="NonShootablePlatform110" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1426, -4 )
+
+[node name="NonShootablePlatform52" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 410 )
+
+[node name="NonShootablePlatform85" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 410 )
+
+[node name="NonShootablePlatform125" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1456, -4 )
+
+[node name="NonShootablePlatform53" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 380 )
+
+[node name="NonShootablePlatform88" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 380 )
+
+[node name="NonShootablePlatform116" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1486, -4 )
+
+[node name="NonShootablePlatform54" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 350 )
+
+[node name="NonShootablePlatform76" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 350 )
+
+[node name="NonShootablePlatform119" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1516, -4 )
+
+[node name="NonShootablePlatform55" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 320 )
+
+[node name="NonShootablePlatform81" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 320 )
+
+[node name="NonShootablePlatform121" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1546, -4 )
+
+[node name="NonShootablePlatform56" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 290 )
+
+[node name="NonShootablePlatform94" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 290 )
+
+[node name="NonShootablePlatform129" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1576, -4 )
+
+[node name="NonShootablePlatform57" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 260 )
+
+[node name="NonShootablePlatform91" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 260 )
+
+[node name="NonShootablePlatform106" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1606, -4 )
+
+[node name="NonShootablePlatform58" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 230 )
+
+[node name="NonShootablePlatform90" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 230 )
+
+[node name="NonShootablePlatform105" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1636, -4 )
+
+[node name="NonShootablePlatform59" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 200 )
+
+[node name="NonShootablePlatform92" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 200 )
+
+[node name="NonShootablePlatform115" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1664, -4 )
+
+[node name="NonShootablePlatform3" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 140 )
+
+[node name="NonShootablePlatform60" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 140 )
+
+[node name="NonShootablePlatform99" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1724, -4 )
+
+[node name="NonShootablePlatform4" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 110 )
+
+[node name="NonShootablePlatform61" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 110 )
+
+[node name="NonShootablePlatform101" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1754, -4 )
+
+[node name="NonShootablePlatform5" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 20 )
+
+[node name="NonShootablePlatform62" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 20 )
+
+[node name="NonShootablePlatform100" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1874, -4 )
+
+[node name="NonShootablePlatform6" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 80 )
+
+[node name="NonShootablePlatform63" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 80 )
+
+[node name="NonShootablePlatform98" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1784, -4 )
+
+[node name="NonShootablePlatform7" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( -2.8494, 50 )
+
+[node name="NonShootablePlatform65" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1933, 50 )
+
+[node name="NonShootablePlatform96" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
+position = Vector2( 1814, -4 )

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Projectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/OrangeProj.gd" type="Script" id=2]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/ball.png-ced949aa27aa6415675b42ae2cf4b2b4.stex"
+
+[node name="OrangeProj" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="1"]
+modulate = Color( 0.913725, 0.427451, 0, 1 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_OrangeProj_body_entered"]

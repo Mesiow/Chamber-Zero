@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/gun.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/PortalGun.gd" type="Script" id=2]
+
+[node name="PortalGun" type="Sprite"]
+modulate = Color( 0, 0.376471, 0.709804, 1 )
+position = Vector2( 1.05349, 3.29218 )
+scale = Vector2( 10, 1.5 )
+texture = ExtResource( 1 )
+offset = Vector2( 2.5, 0.5 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( 5, 0.01 )
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.5
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

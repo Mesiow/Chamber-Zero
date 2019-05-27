@@ -1,0 +1,258 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/ChamberTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ShootablePlatform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ExitDoor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+
+[node name="ChamberNine" type="Node"]
+
+[node name="Chamber" parent="." instance=ExtResource( 1 )]
+
+[node name="ShootablePlatforms" type="Node" parent="Chamber"]
+editor/display_folded = true
+
+[node name="ShootablePlatform" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 130, 490 )
+horizontal = true
+
+[node name="ShootablePlatform2" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 340, 490 )
+
+[node name="ShootablePlatform19" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 340, 490 )
+
+[node name="ShootablePlatform20" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 340, 490 )
+
+[node name="ShootablePlatform21" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 340, 490 )
+horizontal = true
+
+[node name="ShootablePlatform22" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 460, 220 )
+vertical = true
+
+[node name="ShootablePlatform23" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 460, 310 )
+vertical = true
+
+[node name="ShootablePlatform24" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 460, 280 )
+vertical = true
+
+[node name="ShootablePlatform18" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 460, 250 )
+vertical = true
+
+[node name="ShootablePlatform14" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 170, 220 )
+horizontal = true
+
+[node name="ShootablePlatform15" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 200, 220 )
+horizontal = true
+
+[node name="ShootablePlatform16" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 260, 220 )
+horizontal = true
+
+[node name="ShootablePlatform17" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 230, 220 )
+horizontal = true
+
+[node name="ShootablePlatform9" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 510, 580 )
+horizontal = true
+
+[node name="ShootablePlatform25" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 590, 814 )
+horizontal = true
+
+[node name="ShootablePlatform26" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 800, 814 )
+horizontal = true
+
+[node name="ShootablePlatform35" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1740, 470 )
+horizontal = true
+
+[node name="ShootablePlatform51" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1800, 470 )
+horizontal = true
+
+[node name="ShootablePlatform55" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1890, 470 )
+z_index = 2
+horizontal = true
+
+[node name="ShootablePlatform56" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1890, 440 )
+vertical = true
+
+[node name="ShootablePlatform57" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1890, 380 )
+vertical = true
+
+[node name="ShootablePlatform58" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1860, 470 )
+horizontal = true
+
+[node name="ShootablePlatform59" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1830, 470 )
+horizontal = true
+
+[node name="ShootablePlatform60" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1890, 350 )
+vertical = true
+
+[node name="ShootablePlatform52" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1890, 410 )
+vertical = true
+
+[node name="ShootablePlatform53" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1890, 320 )
+vertical = true
+
+[node name="ShootablePlatform54" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1770, 470 )
+horizontal = true
+
+[node name="ShootablePlatform36" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1710, 470 )
+horizontal = true
+
+[node name="ShootablePlatform37" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1680, 470 )
+horizontal = true
+
+[node name="ShootablePlatform38" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1650, 470 )
+horizontal = true
+
+[node name="ShootablePlatform39" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1620, 470 )
+horizontal = true
+
+[node name="ShootablePlatform40" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1530, 470 )
+horizontal = true
+
+[node name="ShootablePlatform43" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1470, 40 )
+horizontal = true
+
+[node name="ShootablePlatform44" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1440, 40 )
+horizontal = true
+
+[node name="ShootablePlatform45" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1410, 40 )
+horizontal = true
+
+[node name="ShootablePlatform46" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1380, 40 )
+horizontal = true
+
+[node name="ShootablePlatform47" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1350, 40 )
+horizontal = true
+
+[node name="ShootablePlatform48" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1320, 40 )
+horizontal = true
+
+[node name="ShootablePlatform49" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1259.6, 40 )
+horizontal = true
+
+[node name="ShootablePlatform50" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1289.6, 40 )
+horizontal = true
+
+[node name="ShootablePlatform41" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1560, 470 )
+horizontal = true
+
+[node name="ShootablePlatform42" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 1590, 470 )
+horizontal = true
+
+[node name="ShootablePlatform27" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 620, 814 )
+horizontal = true
+
+[node name="ShootablePlatform28" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 570, 580 )
+horizontal = true
+
+[node name="ShootablePlatform29" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 540, 580 )
+horizontal = true
+
+[node name="ShootablePlatform30" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 770, 814 )
+horizontal = true
+
+[node name="ShootablePlatform31" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 740, 814 )
+horizontal = true
+
+[node name="ShootablePlatform32" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 710, 814 )
+horizontal = true
+
+[node name="ShootablePlatform33" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 680, 814 )
+horizontal = true
+
+[node name="ShootablePlatform34" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 650, 814 )
+horizontal = true
+
+[node name="ShootablePlatform10" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 480, 580 )
+horizontal = true
+
+[node name="ShootablePlatform11" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 450, 580 )
+horizontal = true
+
+[node name="ShootablePlatform12" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 420, 580 )
+horizontal = true
+
+[node name="ShootablePlatform13" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 390, 580 )
+horizontal = true
+
+[node name="ShootablePlatform3" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 310, 490 )
+horizontal = true
+
+[node name="ShootablePlatform4" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 280, 490 )
+horizontal = true
+
+[node name="ShootablePlatform5" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 250, 490 )
+horizontal = true
+
+[node name="ShootablePlatform6" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 220, 490 )
+horizontal = true
+
+[node name="ShootablePlatform7" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 190, 490 )
+horizontal = true
+
+[node name="ShootablePlatform8" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
+position = Vector2( 160, 490 )
+horizontal = true
+
+[node name="ExitDoor" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 1754, 410 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 122.8, 350 )
