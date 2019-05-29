@@ -18,6 +18,7 @@ var launchVelocity=Vector2()
 var on_air_time = 100
 var airTime=0
 var prevAirTime
+var updatedPrevAirTime
 var jumping = false
 
 var prev_jump_pressed = false
@@ -58,10 +59,10 @@ func teleport_Orange_Received(bluePortal): #teleport to blue portal from enterin
 	
 func setJumpVelocity(portal): #grab certain velocity depending on facing direction of portal we come out from
 	match portal.currentFacingDir: #set 
-		portal.facing.UP:velocity.y =-JUMP_SPEED + prevAirTime #launch up a little bit
-		portal.facing.DOWN:velocity.y=JUMP_SPEED - prevAirTime
-		portal.facing.LEFT:velocity.x=-JUMP_SPEED - prevAirTime
-		portal.facing.RIGHT:velocity.x=JUMP_SPEED + prevAirTime
+		portal.facing.UP:velocity.y =-JUMP_SPEED * prevAirTime #launch up a little bit
+		portal.facing.DOWN:velocity.y=JUMP_SPEED * prevAirTime
+		portal.facing.LEFT:velocity.x=-JUMP_SPEED * prevAirTime
+		portal.facing.RIGHT:velocity.x=JUMP_SPEED * prevAirTime
 
 	pass
 
@@ -89,16 +90,17 @@ func _input(event):
 func _physics_process(delta):
 	# Create forces
 	#force = Vector2(0, gravity)
+	if airTime >= 0.1:
+		prevAirTime=airTime #save how much air time a jump took
+		
 	var jump = Input.is_action_pressed("Jump")
 
-	prevAirTime=airTime
 	# Integrate forces to velocity
 	velocity += force * delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 		
 	if is_on_floor():
 		on_air_time = 0
-		#airTime=0
 		
 	if jumping and velocity.y > 0:
 		# If falling, no longer jumping
@@ -117,12 +119,9 @@ func _physics_process(delta):
 	
 func updateAirTime():
 	if !is_on_floor():
-		prevAirTime=airTime
-		airTime+=1
+		airTime+=0.03
 	else:
 		airTime=0
-		
-	print(prevAirTime)
 	pass
 	
 func getNormalizedDir():

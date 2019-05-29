@@ -3,6 +3,7 @@ extends Sprite
 const blueProj=preload("res://Scenes/BlueProj.tscn")
 const orangeProj=preload("res://Scenes/OrangeProj.tscn")
 var canShoot=true
+var gunFacingLeft=false
 
 var worldNode
 
@@ -13,6 +14,16 @@ func _ready():
 	
 func _process(delta):
 	look_at(get_global_mouse_position())
+	
+	#print($Muzzle.global_rotation_degrees)
+	#about to look left so flip the gun
+	#if !gunFacingLeft:
+	if $Muzzle.global_rotation_degrees < -85.0:
+		gunFacingLeft=true
+		flip_v=true
+	if $Muzzle.global_rotation_degrees > 85.0:
+		gunFacingLeft=false
+		flip_v=false
 	pass
 	
 	

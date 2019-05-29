@@ -19,6 +19,7 @@ scale_random = 0.5
 color = Color( 0.0980392, 0.819608, 0, 1 )
 
 [node name="Area2D" type="Area2D"]
+collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

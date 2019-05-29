@@ -21,3 +21,4 @@ shape = SubResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_ExitDoor_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_ExitDoor_body_exited"]
