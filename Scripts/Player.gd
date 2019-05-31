@@ -32,6 +32,7 @@ func _ready():
 	set_process_input(true)
 	
 	gun=Gun.instance()
+	
 	add_child(gun)
 	
 	add_to_group("Player")
@@ -41,29 +42,37 @@ func _ready():
 	
 func teleport_Blue_Received(orangePortal): #teleport to orange portal from entering the blue
 	if okToTeleport:
-		global_position=orangePortal.global_position
+		adjustTeleportPosition(orangePortal)
 		setJumpVelocity(orangePortal)
 		$TeleportTimer.start()
 		okToTeleport=false
-		
 	pass
 	
 func teleport_Orange_Received(bluePortal): #teleport to blue portal from entering the orange
 	
 	if okToTeleport:
-		global_position=bluePortal.global_position
+		adjustTeleportPosition(bluePortal)
 		setJumpVelocity(bluePortal)
 		$TeleportTimer.start()
 		okToTeleport=false
 	pass
 	
 func setJumpVelocity(portal): #grab certain velocity depending on facing direction of portal we come out from
+	print(prevAirTime)
 	match portal.currentFacingDir: #set 
 		portal.facing.UP:velocity.y =-JUMP_SPEED * prevAirTime #launch up a little bit
 		portal.facing.DOWN:velocity.y=JUMP_SPEED * prevAirTime
 		portal.facing.LEFT:velocity.x=-JUMP_SPEED * prevAirTime
 		portal.facing.RIGHT:velocity.x=JUMP_SPEED * prevAirTime
 
+	pass
+	
+func adjustTeleportPosition(portal):
+	
+	match portal.currentFacingDir:
+		portal.facing.UP: global_position=Vector2(portal.global_position.x, portal.global_position.y - 5)
+		portal.facing.DOWN: global_position=Vector2(portal.global_position.x, portal.global_position.y + 5)
+		_:global_position=portal.global_position #default case
 	pass
 
 func _input(event):
@@ -81,9 +90,14 @@ func _input(event):
 	
 	if walk_left:
 		velocity.x=-speed 
+		$AnimatedSprite.flip_h=true
+		$AnimatedSprite.play("run")
 	elif walk_right:
 		velocity.x=speed 
+		$AnimatedSprite.flip_h=false
+		$AnimatedSprite.play("run")
 	else:
+		$AnimatedSprite.play("idle")
 		velocity.x=0
 		
 	pass

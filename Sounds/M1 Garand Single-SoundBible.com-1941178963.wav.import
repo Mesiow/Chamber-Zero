@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/M1 Garand Single-SoundBible.com-1941178963.wav-6a1a506bd3060990ca1790182e6a5347.sample"
+
+[deps]
+
+source_file="res://Sounds/M1 Garand Single-SoundBible.com-1941178963.wav"
+dest_files=[ "res://.import/M1 Garand Single-SoundBible.com-1941178963.wav-6a1a506bd3060990ca1790182e6a5347.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

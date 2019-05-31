@@ -10,18 +10,25 @@ var worldNode
 func _ready():
 	set_process(true)
 	worldNode=get_tree().get_root().get_node("/root/World")
+	hide()
 	pass
 	
 func _process(delta):
 	look_at(get_global_mouse_position())
 	
-	#print($Muzzle.global_rotation_degrees)
+	print($Muzzle.global_rotation_degrees)
 	#about to look left so flip the gun
 	#if !gunFacingLeft:
-	if $Muzzle.global_rotation_degrees < -85.0:
+	
+	if $Muzzle.global_rotation_degrees <= -90.0:
 		gunFacingLeft=true
 		flip_v=true
-	if $Muzzle.global_rotation_degrees > 85.0:
+	if $Muzzle.global_rotation_degrees >= 90.0 and gunFacingLeft:
+		#gunFacingLeft=false
+		#flip_v=false
+		flip_v=true
+		
+	if $Muzzle.global_rotation_degrees <= 45.0 and $Muzzle.global_rotation_degrees >= 0:
 		gunFacingLeft=false
 		flip_v=false
 	pass
