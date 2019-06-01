@@ -19,3 +19,4 @@ texture = ExtResource( 3 )
 [node name="VisibilityNotifier2D" parent="." index="2"]
 position = Vector2( 0.0146322, 0.0621863 )
 scale = Vector2( 0.15711, 0.152631 )
+[connection signal="body_entered" from="." to="." method="_on_TurretProjectile_body_entered"]

@@ -8,6 +8,7 @@ load_path = "res://.import/ball.png-ced949aa27aa6415675b42ae2cf4b2b4.stex"
 
 [node name="OrangeProj" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+speed = 400
 
 [node name="Sprite" parent="." index="1"]
 modulate = Color( 0.913725, 0.427451, 0, 1 )

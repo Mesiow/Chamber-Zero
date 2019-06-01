@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 const Gun=preload("res://Scenes/PortalGun.tscn")
+const Crosshair=preload("res://Scenes/Crosshair.tscn")
 var gun
 
 const gravity = 600.0 
@@ -17,7 +18,7 @@ var velocity = Vector2()
 var launchVelocity=Vector2()
 var on_air_time = 100
 var airTime=0
-var prevAirTime
+var prevAirTime=0.1
 var updatedPrevAirTime
 var jumping = false
 
@@ -28,16 +29,19 @@ var okToTeleport=true
 var force
 
 func _ready():
+	var worldNode=get_tree().get_root().get_node("/root/World")
+	
 	set_physics_process(true)
 	set_process_input(true)
+	force = Vector2(0, gravity)
 	
 	gun=Gun.instance()
-	
 	add_child(gun)
 	
-	add_to_group("Player")
+	var crosshair=Crosshair.instance()
+	worldNode.call_deferred("add_child", crosshair)
 	
-	force = Vector2(0, gravity)
+	add_to_group("Player")
 	pass
 	
 func teleport_Blue_Received(orangePortal): #teleport to orange portal from entering the blue
@@ -58,7 +62,7 @@ func teleport_Orange_Received(bluePortal): #teleport to blue portal from enterin
 	pass
 	
 func setJumpVelocity(portal): #grab certain velocity depending on facing direction of portal we come out from
-	print(prevAirTime)
+	#print(prevAirTime)
 	match portal.currentFacingDir: #set 
 		portal.facing.UP:velocity.y =-JUMP_SPEED * prevAirTime #launch up a little bit
 		portal.facing.DOWN:velocity.y=JUMP_SPEED * prevAirTime
@@ -68,7 +72,6 @@ func setJumpVelocity(portal): #grab certain velocity depending on facing directi
 	pass
 	
 func adjustTeleportPosition(portal):
-	
 	match portal.currentFacingDir:
 		portal.facing.UP: global_position=Vector2(portal.global_position.x, portal.global_position.y - 5)
 		portal.facing.DOWN: global_position=Vector2(portal.global_position.x, portal.global_position.y + 5)
@@ -99,11 +102,12 @@ func _input(event):
 	else:
 		$AnimatedSprite.play("idle")
 		velocity.x=0
-		
 	pass
+	
 func _physics_process(delta):
 	# Create forces
 	#force = Vector2(0, gravity)
+	#print(prevAirTime)
 	if airTime >= 0.1:
 		prevAirTime=airTime #save how much air time a jump took
 		

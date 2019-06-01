@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/portal_enter2.wav-8a8ff79534c3769b07bbc5a24f1b91cd.sample"
+
+[deps]
+
+source_file="res://Sounds/PortalSounds/portal_enter2.wav"
+dest_files=[ "res://.import/portal_enter2.wav-8a8ff79534c3769b07bbc5a24f1b91cd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

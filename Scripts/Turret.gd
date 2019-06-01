@@ -2,17 +2,23 @@ extends RigidBody2D
 
 const Bullet=preload("res://Scenes/TurretProjectile.tscn")
 
+var disabledSounds = [ preload("res://Sounds/turretSounds/turret_disabled_8.wav"),
+preload("res://Sounds/turretSounds/turret_disabled_5.wav"), preload("res://Sounds/turretSounds/turret_disabled_4.wav"),
+preload("res://Sounds/turretSounds/turret_disabled_3.wav"), preload("res://Sounds/turretSounds/turret_disabled_2.wav") ]
+
 var target
 var hitPos
 var canShoot=true
 var detectRadius=800
 var visColor=Color(.867, .91, .247, 0.1)
 var laserColor=Color(1.0, .329, .298)
-var canSeePlayer=false
+var showRay
 var okToTeleport=true
 var teleported=false
 var newPosition
 var currentState
+var disabled=false
+export var faceRight=false
 
 var worldNode
 
@@ -20,6 +26,10 @@ func _ready():
 	set_process(true)
 	set_physics_process(true)
 	worldNode=get_tree().get_root().get_node("/root/World")
+	
+	#set disabled sounds
+	var element=randi() % disabledSounds.size() + 0
+	$Disabled.stream=disabledSounds[element]
 	
 	add_to_group("Turrets")
 	pass
@@ -30,14 +40,15 @@ func _process(delta):
 	
 func _physics_process(delta):
 	if target:
-		aim()
+		if !disabled:
+			aim()
 	pass
 	
 func _integrate_forces(state):
 	#if teleported:
 	#	state.transform=newPosition
-		
-	currentState=state.transform
+	if faceRight:
+		scale=Vector2(-1,1)
 	pass
 	
 func aim():
@@ -57,10 +68,15 @@ func aim():
 				hitPos.append(result.position)
 				if result.collider.name == "Player": #ray hit player
 					shoot(pos)
-					canSeePlayer=true
+					showRay=true
+				else:
+					#get number of platforms in level
+					var count = worldNode.get_node(worldNode.currentLevel).get_node("Chamber").get_node("ShootablePlatforms").get_child_count()
+					for i in range(0, count): #loop through all the platforms
+						if result.collider.name == "ShootablePlatform" + str(i):
+							showRay=false #do not show the turret ray if it cannot see the player
+							break
 				break
-			else:
-				canSeePlayer=false
 	pass
 	
 func shoot(pos):
@@ -97,10 +113,13 @@ func _on_Visibility_body_exited(body):
 	
 func _draw():
 	#draw_circle(Vector2(), detectRadius, visColor)
-	if target:
-		for hit in hitPos:
-			draw_circle((hit - global_position).rotated(-rotation), 5, laserColor)
-			draw_line(Vector2(), (hit - global_position).rotated(-rotation), laserColor)
+	#if target and showRay:
+		#for hit in hitPos:
+			#draw_circle((hit - global_position).rotated(-rotation), 5, laserColor)
+			#draw_line(Vector2(), (hit - global_position).rotated(-rotation), laserColor)
+			#if faceRight:
+				#draw_circle((hit + global_position).rotated(rotation), 5, laserColor)
+				#draw_line(Vector2(), (hit + global_position).rotated(rotation), laserColor)
 	pass
 
 
@@ -132,8 +151,14 @@ func teleport_Turret_Blue_Received(orangePortal):
 	teleported=false
 	pass
 
-
-
 func _on_TeleportTimer_timeout():
 	okToTeleport=true
 	pass 
+
+
+func _on_turretArea_body_exited(body):
+	if body.is_in_group("Player"):
+		if !disabled:
+			disabled=true
+			$Disabled.play()
+	pass

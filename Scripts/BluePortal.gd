@@ -17,4 +17,5 @@ func _on_PortalArea_body_entered(body):
 		if orangePortalGroup.size() >= 1: #it exists
 			var orangePortal=orangePortalGroup[0]
 			emit_signal("teleportPlayer", orangePortal)
+			$EnterSound.play()
 	pass 

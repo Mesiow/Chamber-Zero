@@ -13,3 +13,5 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="PortalArea"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PortalArea"]
+
+[node name="EnterSound" type="AudioStreamPlayer" parent="."]

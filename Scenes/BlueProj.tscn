@@ -6,6 +6,7 @@
 
 [node name="BlueProj" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+speed = 400
 
 [node name="Sprite" parent="." index="1"]
 modulate = Color( 0.105882, 0.101961, 0.74902, 1 )

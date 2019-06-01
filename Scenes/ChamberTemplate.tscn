@@ -169,6 +169,7 @@ position = Vector2( 90, 1050 )
 position = Vector2( 40, 1050 )
 
 [node name="NonShootablePlatformContainer" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="NonShootablePlatform" parent="NonShootablePlatformContainer" instance=ExtResource( 3 )]
 position = Vector2( 194, -4 )

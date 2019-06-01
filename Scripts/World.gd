@@ -28,5 +28,7 @@ func hit_Platform_Received(position, from, color):
 func _input(event):
 	if Input.is_action_pressed("Quit"):
 		get_tree().quit()
+	if Input.is_action_pressed("ui_down"):
+		get_tree().reload_current_scene()
 	pass
 

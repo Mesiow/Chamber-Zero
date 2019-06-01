@@ -16,10 +16,6 @@ func _ready():
 func _process(delta):
 	look_at(get_global_mouse_position())
 	
-	print($Muzzle.global_rotation_degrees)
-	#about to look left so flip the gun
-	#if !gunFacingLeft:
-	
 	if $Muzzle.global_rotation_degrees <= -90.0:
 		gunFacingLeft=true
 		flip_v=true
@@ -42,11 +38,13 @@ func shoot(pressed, dir):
 			blue.init($Muzzle.global_position)
 			blue.setDir(dir)
 			worldNode.add_child(blue)
+			$BlueShot.play()
 		elif Input.is_action_pressed("RightMouse") == pressed:
 			var orange=orangeProj.instance()
 			orange.init($Muzzle.global_position)
 			orange.setDir(dir)
 			worldNode.add_child(orange)
+			$OrangeShot.play()
 		
 		canShoot=false
 		

@@ -19,4 +19,5 @@ func _on_PortalArea_body_entered(body):
 		if bluePortalGroup.size() >= 1:
 			var bluePortal=bluePortalGroup[0]
 			emit_signal("teleportPlayer", bluePortal)
+			$EnterSound.play()
 	pass 
