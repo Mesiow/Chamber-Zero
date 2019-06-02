@@ -1,5 +1,5 @@
 extends Sprite
 
 func _ready():
-	$NumberFade.play("fadeaway")
+	$fade.play("fadeout")
 	pass

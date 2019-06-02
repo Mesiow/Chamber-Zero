@@ -6,9 +6,11 @@ func _ready():
 func _on_ExitDoor_body_entered(body):
 	if body.is_in_group("Player"):
 		$Sprite.texture=load("res://Sprites/Objects/DoorOpen.png")
+		$DoorLight.enabled=false
 	pass 
 
 
 func _on_ExitDoor_body_exited(body):
 	$Sprite.texture=load("res://Sprites/Objects/DoorUnlocked.png")
+	$DoorLight.enabled=true
 	pass 

@@ -30,6 +30,7 @@ func _ready():
 	#set disabled sounds
 	var element=randi() % disabledSounds.size() + 0
 	$Disabled.stream=disabledSounds[element]
+	$Disabled.volume_db = -5.0
 	
 	add_to_group("Turrets")
 	pass
@@ -113,10 +114,10 @@ func _on_Visibility_body_exited(body):
 	
 func _draw():
 	#draw_circle(Vector2(), detectRadius, visColor)
-	#if target and showRay:
-		#for hit in hitPos:
-			#draw_circle((hit - global_position).rotated(-rotation), 5, laserColor)
-			#draw_line(Vector2(), (hit - global_position).rotated(-rotation), laserColor)
+	if target and showRay:
+		for hit in hitPos:
+			draw_circle((hit - global_position).rotated(-rotation), 5, laserColor)
+			draw_line(Vector2(), (hit - global_position).rotated(-rotation), laserColor)
 			#if faceRight:
 				#draw_circle((hit + global_position).rotated(rotation), 5, laserColor)
 				#draw_line(Vector2(), (hit + global_position).rotated(rotation), laserColor)

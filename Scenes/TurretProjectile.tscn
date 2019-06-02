@@ -6,7 +6,7 @@
 
 [node name="TurretProjectile" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-speed = 1500
+speed = 500
 
 [node name="CollisionShape2D" parent="." index="0"]
 scale = Vector2( 1.5, 1.5 )

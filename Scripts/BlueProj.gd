@@ -7,6 +7,8 @@ func _ready():
 
 
 func _on_BlueProj_body_entered(body):
+	#if body.is_in_group("NonShootablePlatforms"):
+	#	$HitInvalidSurface.play()
 	if body.is_in_group("ShootablePlatforms"):
 		var rect=body.get_node("Sprite").get_rect()
 		

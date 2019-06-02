@@ -28,6 +28,9 @@ var prev_Velocity=Vector2() #intial velocity before we entered the portal so the
 var okToTeleport=true
 var force
 
+var health = 10 setget setHealth, getHealth
+signal healthChanged(newHealth)
+
 func _ready():
 	var worldNode=get_tree().get_root().get_node("/root/World")
 	
@@ -42,6 +45,15 @@ func _ready():
 	worldNode.call_deferred("add_child", crosshair)
 	
 	add_to_group("Player")
+	pass
+	
+func setHealth(val):
+	health=val
+	emit_signal("healthChanged", health)
+	pass
+
+func getHealth():
+	return health
 	pass
 	
 func teleport_Blue_Received(orangePortal): #teleport to orange portal from entering the blue

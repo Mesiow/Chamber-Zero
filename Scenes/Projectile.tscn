@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Projectile.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/PortalSounds/portal_invalid_surface3.wav" type="AudioStream" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1, 1 )
@@ -16,5 +17,7 @@ shape = SubResource( 1 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 0.0438961, 0.0036584 )
 scale = Vector2( 0.206859, 0.205306 )
-[connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
+
+[node name="HitInvalidSurface" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

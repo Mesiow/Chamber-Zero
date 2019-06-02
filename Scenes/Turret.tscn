@@ -39,7 +39,7 @@ polygon = PoolVector2Array( -11.0082, -10.856, -908.914, -917.944, -885.289, 745
 position = Vector2( -10.2716, -4.0823 )
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.3
 
 [node name="turretArea" type="Area2D" parent="."]
 
@@ -50,6 +50,7 @@ shape = SubResource( 2 )
 
 [node name="Shot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = 1.0
 
 [node name="Disabled" type="AudioStreamPlayer" parent="."]
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
