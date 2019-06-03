@@ -2,6 +2,7 @@ extends Area2D
 
 var dir=Vector2()
 export var speed=350
+export var damage=10
 
 signal hit(position, from, color)
 

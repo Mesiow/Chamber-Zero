@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/turretlaunched02.wav-67cd737529374b997f0b0e931e0475b7.sample"
+
+[deps]
+
+source_file="res://Sounds/turretSounds/turretlaunched02.wav"
+dest_files=[ "res://.import/turretlaunched02.wav-67cd737529374b997f0b0e931e0475b7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

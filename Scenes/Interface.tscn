@@ -1,28 +1,30 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Interface.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Textures/bar.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/ball.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/UI/Interface.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/UI/energy_bar_bg.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/energy_bar_fill.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/UI/LifeBar.gd" type="Script" id=4]
 
 [node name="Interface" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 74.0
+margin_bottom = 12.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="HealthBar" type="Node" parent="."]
-script = ExtResource( 2 )
+[node name="LifeBar" type="TextureProgress" parent="."]
+self_modulate = Color( 0.956863, 0.956863, 0.956863, 1 )
+margin_right = 248.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.3, 0.3 )
+value = 50.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+tint_under = Color( 0.341176, 0, 0, 1 )
+tint_progress = Color( 1, 0, 0, 1 )
+script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="HealthBar"]
-position = Vector2( 176, 39.5556 )
-texture = ExtResource( 3 )
-
-[node name="TextureRect" type="TextureRect" parent="HealthBar"]
-modulate = Color( 0.937255, 0.0901961, 0.0901961, 1 )
-margin_left = -208.0
-margin_top = 23.0
-margin_right = 559.0
-margin_bottom = 56.0
-texture = ExtResource( 4 )
-stretch_mode = 7
-[connection signal="healthChanged" from="." to="HealthBar" method="_on_Interface_healthChanged"]
+[node name="fillEffect" type="Tween" parent="LifeBar"]
+[connection signal="healthChanged" from="." to="LifeBar" method="_on_Interface_healthChanged"]
+[connection signal="tween_started" from="LifeBar/fillEffect" to="LifeBar" method="_on_fillEffect_tween_started"]

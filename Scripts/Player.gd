@@ -28,8 +28,9 @@ var prev_Velocity=Vector2() #intial velocity before we entered the portal so the
 var okToTeleport=true
 var force
 
-var health = 10 setget setHealth, getHealth
+var health = 100 setget setHealth, getHealth
 signal healthChanged(newHealth)
+signal playerDied
 
 func _ready():
 	var worldNode=get_tree().get_root().get_node("/root/World")
@@ -50,6 +51,10 @@ func _ready():
 func setHealth(val):
 	health=val
 	emit_signal("healthChanged", health)
+	if health <= 0:
+		emit_signal("playerDied")
+		queue_free()
+		return
 	pass
 
 func getHealth():

@@ -12,7 +12,6 @@
 [node name="ChamberNine" type="Node"]
 
 [node name="Chamber" parent="." instance=ExtResource( 1 )]
-editor/display_folded = true
 
 [node name="ShootablePlatforms" type="Node" parent="Chamber"]
 editor/display_folded = true
@@ -68,14 +67,6 @@ vertical = true
 
 [node name="ShootablePlatform44" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
 position = Vector2( 464, 192 )
-vertical = true
-
-[node name="ShootablePlatform45" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
-position = Vector2( 496, 160 )
-vertical = true
-
-[node name="ShootablePlatform46" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
-position = Vector2( 496, 192 )
 vertical = true
 
 [node name="ShootablePlatform47" parent="Chamber/ShootablePlatforms" instance=ExtResource( 2 )]
@@ -495,11 +486,23 @@ position = Vector2( 1104, 32 )
 [node name="NonShootablePlatform110" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
 position = Vector2( 288, 304 )
 
+[node name="NonShootablePlatform140" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
+position = Vector2( 320, 304 )
+
+[node name="NonShootablePlatform143" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
+position = Vector2( 320, 272 )
+
 [node name="NonShootablePlatform130" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
 position = Vector2( 224, 304 )
 
 [node name="NonShootablePlatform132" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
 position = Vector2( 192, 304 )
+
+[node name="NonShootablePlatform144" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
+position = Vector2( 160, 304 )
+
+[node name="NonShootablePlatform145" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
+position = Vector2( 160, 272 )
 
 [node name="NonShootablePlatform131" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
 position = Vector2( 256, 304 )
@@ -518,6 +521,12 @@ position = Vector2( 528, 192 )
 
 [node name="NonShootablePlatform95" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
 position = Vector2( 528, 160 )
+
+[node name="NonShootablePlatform114" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
+position = Vector2( 496, 192 )
+
+[node name="NonShootablePlatform115" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
+position = Vector2( 496, 160 )
 
 [node name="NonShootablePlatform88" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
 position = Vector2( 752, 160 )
@@ -624,8 +633,9 @@ position = Vector2( 336, 512 )
 
 [node name="Turret Container" type="Node" parent="Chamber"]
 
-[node name="Turret" parent="Chamber/Turret Container" instance=ExtResource( 4 )]
-position = Vector2( 621.551, 331.918 )
+[node name="Turret" parent="." instance=ExtResource( 4 )]
+position = Vector2( 639.951, 336 )
+contacts_reported = 1
 
 [node name="Tilemap" parent="." instance=ExtResource( 5 )]
 tile_data = PoolIntArray( 589884, 0, 0, 589886, 0, 0, 589888, 0, 0, 589890, 0, 0, 589892, 0, 0, 589894, 0, 0, 589896, 0, 0, 589898, 0, 0, 589900, 0, 0, 720956, 0, 0, 720958, 0, 0, 720960, 0, 0, 720962, 0, 0, 720964, 0, 0, 720966, 0, 0, 720968, 0, 0, 720970, 0, 0, 720972, 0, 0, 852028, 0, 0, 852030, 0, 0, 852032, 0, 0, 852034, 0, 0, 852036, 0, 0, 852038, 0, 0, 852040, 0, 0, 852042, 0, 0, 852044, 0, 0, 983100, 0, 0, 983102, 0, 0, 983104, 0, 0, 983106, 0, 0, 983108, 0, 0, 983110, 0, 0, 983112, 0, 0, 983114, 0, 0, 983116, 0, 0, 1114172, 0, 0, 1114174, 0, 0, 1114176, 0, 0, 1114178, 0, 0, 1114180, 0, 0, 1114182, 0, 0, 1114184, 0, 0, 1114186, 0, 0, 1114188, 0, 0, 1245244, 0, 0 )
@@ -637,4 +647,4 @@ position = Vector2( 1222.4, 257.6 )
 position = Vector2( 104.301, 426 )
 
 [node name="LevelNumber" parent="." instance=ExtResource( 8 )]
-position = Vector2( 372.751, 320 )
+position = Vector2( 389.951, 320 )

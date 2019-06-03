@@ -6,6 +6,9 @@ var disabledSounds = [ preload("res://Sounds/turretSounds/turret_disabled_8.wav"
 preload("res://Sounds/turretSounds/turret_disabled_5.wav"), preload("res://Sounds/turretSounds/turret_disabled_4.wav"),
 preload("res://Sounds/turretSounds/turret_disabled_3.wav"), preload("res://Sounds/turretSounds/turret_disabled_2.wav") ]
 
+var launchedSounds = [ preload("res://Sounds/turretSounds/turretlaunched02.wav"), preload("res://Sounds/turretSounds/turretlaunched04.wav"),
+preload("res://Sounds/turretSounds/turretlaunched08.wav"), preload("res://Sounds/turretSounds/turretlaunched11.wav") ]
+
 var target
 var hitPos
 var canShoot=true
@@ -18,6 +21,7 @@ var teleported=false
 var newPosition
 var currentState
 var disabled=false
+var launched=false
 export var faceRight=false
 
 var worldNode
@@ -28,9 +32,13 @@ func _ready():
 	worldNode=get_tree().get_root().get_node("/root/World")
 	
 	#set disabled sounds
-	var element=randi() % disabledSounds.size() + 0
-	$Disabled.stream=disabledSounds[element]
+	var disabledIndex=randi() % disabledSounds.size() + 0
+	$Disabled.stream=disabledSounds[disabledIndex]
 	$Disabled.volume_db = -5.0
+	
+	var launchedIndex=randi() % launchedSounds.size() + 0
+	$Launched.stream=launchedSounds[launchedIndex]
+	$Launched.volume_db = -5.0
 	
 	add_to_group("Turrets")
 	pass
@@ -46,10 +54,12 @@ func _physics_process(delta):
 	pass
 	
 func _integrate_forces(state):
-	#if teleported:
-	#	state.transform=newPosition
-	if faceRight:
-		scale=Vector2(-1,1)
+	currentState=state
+	if teleported:
+		state.transform.origin=newPosition #updated rigid body position
+		if !disabled:
+			$Launched.play()
+		teleported=false
 	pass
 	
 func aim():
@@ -132,24 +142,18 @@ func _on_ShootTimer_timeout():
 func teleport_Turret_Orange_Received(bluePortal):
 	if okToTeleport:
 		newPosition=bluePortal.global_position
-		currentState=newPosition
 		teleported=true
 		$TeleportTimer.start()
 		okToTeleport=false
-		
-	teleported=false
 	pass
 	
 	
 func teleport_Turret_Blue_Received(orangePortal):
 	if okToTeleport:
 		newPosition=orangePortal.global_position
-		currentState=newPosition
 		teleported=true
 		$TeleportTimer.start()
 		okToTeleport=false
-	
-	teleported=false
 	pass
 
 func _on_TeleportTimer_timeout():

@@ -14,7 +14,7 @@ func _ready():
 	
 func hit_Platform_Received(position, from, color):
 	if color == "blue":
-		call_deferred("remove_child", blue)#make sure there is only 1 portal of each at a time
+		call_deferred("remove_child", blue) #make sure there is only 1 portal of each at a time
 		blue = bluePortal.instance()
 		blue.spawn(position, from)
 		call_deferred("add_child", blue)
@@ -29,12 +29,17 @@ func hit_Platform_Received(position, from, color):
 func _input(event):
 	if Input.is_action_pressed("Quit"):
 		get_tree().quit()
-	if Input.is_action_pressed("ui_down"):
-		get_tree().reload_current_scene()
 	pass
 	
-func playerHit_Received(): #callback func to tell us the player was hit by a projectile
+func _on_Player_playerDied(): #player died signal callback func
+	showOptionsPlayerDead()
+	pass 
+	
+func playerInAcid_Received(): #callback func to tell if player fell in acid
+	showOptionsPlayerDead()
+	pass
+	
+func showOptionsPlayerDead():
 	var death=deathScn.instance()
 	call_deferred("add_child", death)
 	pass
-
