@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/Turret.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Entities/Turret.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Objects/turret.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/M1 Garand Single-SoundBible.com-1941178963.wav" type="AudioStream" id=3]
 

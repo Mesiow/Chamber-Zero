@@ -1,4 +1,4 @@
-extends "res://Scripts/Portal.gd"
+extends "res://Scripts/PortalScripts/Portal.gd"
 
 signal teleportPlayer(bluePortal)
 signal teleportTurret(bluePortal)

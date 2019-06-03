@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/ShootablePlatform.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/PlatformScripts/ShootablePlatform.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/plat.png" type="Texture" id=3]
+
 
 [node name="ShootablePlatform" index="0" instance=ExtResource( 1 )]
 position = Vector2( 16, 432 )

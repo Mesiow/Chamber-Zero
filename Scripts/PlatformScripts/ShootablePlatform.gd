@@ -1,4 +1,4 @@
-extends "res://Scripts/Platform.gd"
+extends "res://Scripts/PlatformScripts/Platform.gd"
 
 
 func _ready():
