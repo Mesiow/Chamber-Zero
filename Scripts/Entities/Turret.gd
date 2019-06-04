@@ -60,8 +60,7 @@ func _integrate_forces(state):
 		scale=Vector2(-1, 1)
 	if teleported:
 		state.transform.origin=newPosition #updated rigid body position
-		if !disabled:
-			$Launched.play()
+		$Launched.play()
 		teleported=false
 	pass
 	

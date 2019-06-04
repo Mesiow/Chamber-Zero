@@ -5,6 +5,7 @@ const bluePortal=preload("res://Scenes/BluePortal.tscn")
 const orangePortal=preload("res://Scenes/OrangePortal.tscn")
 var blue=null
 var orange=null
+var playerHealth=100
 
 var currentLevel="ChamberNine" setget setCurrentLevel, getCurrentLevel
 var levels=[ "Nine", "Eight", "Seven", "Six", "Five", "Four" ,"Three", "Two", "One", "Zero" ]
@@ -13,7 +14,7 @@ var gameComplete=false
 
 func _ready():
 	set_process_input(true)
-	$BackgroundAmbience.play()
+	#$BackgroundAmbience.play()
 	pass 
 	
 func changeLevel():
@@ -34,16 +35,21 @@ func changeLevel():
 func freeObjects():
 	blue.queue_free() #remove portals
 	orange.queue_free()
+	blue=null
+	orange=null
+	print("freed portals")
 	pass
 	
 func hit_Platform_Received(position, from, color):
 	if color == "blue":
-		call_deferred("remove_child", blue) #make sure there is only 1 portal of each at a time
+		if blue!=null:
+			call_deferred("remove_child", blue) #make sure there is only 1 portal of each at a time
 		blue = bluePortal.instance()
 		blue.spawn(position, from)
 		call_deferred("add_child", blue)
 	elif color == "orange":
-		call_deferred("remove_child", orange)
+		if orange!=null:
+			call_deferred("remove_child", orange)
 		orange=orangePortal.instance()
 		orange.spawn(position, from)
 		call_deferred("add_child", orange)

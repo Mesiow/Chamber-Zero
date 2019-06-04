@@ -9,6 +9,7 @@ const gravity = 600.0
 
 const speed=250
 const JUMP_SPEED = 250
+
 const JUMP_MAX_AIRBORNE_TIME = 0.2
 
 const SLIDE_STOP_VELOCITY = 1.0 #
@@ -28,7 +29,7 @@ var prev_Velocity=Vector2() #intial velocity before we entered the portal so the
 var okToTeleport=true
 var force
 
-var health = 100 setget setHealth, getHealth
+var health = Game.playerHealth setget setHealth, getHealth
 signal healthChanged(newHealth)
 signal playerDied
 
@@ -49,7 +50,8 @@ func _ready():
 	pass
 	
 func setHealth(val):
-	health=val
+	Game.playerHealth=val
+	health=Game.playerHealth
 	emit_signal("healthChanged", health)
 	if health <= 0:
 		emit_signal("playerDied")
@@ -80,12 +82,17 @@ func teleport_Orange_Received(bluePortal): #teleport to blue portal from enterin
 	
 func setJumpVelocity(portal): #grab certain velocity depending on facing direction of portal we come out from
 	#print(prevAirTime)
+	#match portal.currentFacingDir: #set 
+	#	portal.facing.UP:velocity.y =(-launchVelocity.y * 0.5) * prevAirTime #launch up a little bit
+	#	portal.facing.DOWN:velocity.y=(launchVelocity.y * 0.5) * prevAirTime
+	#	portal.facing.LEFT:velocity.x=(-launchVelocity.x * 0.5) * prevAirTime
+	#	portal.facing.RIGHT:velocity.x=(launchVelocity.x * 0.5) * prevAirTime
+
 	match portal.currentFacingDir: #set 
 		portal.facing.UP:velocity.y =-JUMP_SPEED * prevAirTime #launch up a little bit
 		portal.facing.DOWN:velocity.y=JUMP_SPEED * prevAirTime
 		portal.facing.LEFT:velocity.x=-JUMP_SPEED * prevAirTime
 		portal.facing.RIGHT:velocity.x=JUMP_SPEED * prevAirTime
-
 	pass
 	
 func adjustTeleportPosition(portal):
@@ -127,6 +134,7 @@ func _physics_process(delta):
 	#print(prevAirTime)
 	if airTime >= 0.1:
 		prevAirTime=airTime #save how much air time a jump took
+		launchVelocity=velocity
 		
 	var jump = Input.is_action_pressed("Jump")
 
