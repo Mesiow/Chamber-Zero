@@ -21,13 +21,20 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Game="*res://Scripts/World/World.gd"
+Game="res://Scripts/World/World.gd"
 
 [display]
 
 window/size/width=1280
 window/size/height=720
 window/size/resizable=false
+
+[importer_defaults]
+
+ogg_vorbis={
+"loop": true,
+"loop_offset": 0
+}
 
 [input]
 

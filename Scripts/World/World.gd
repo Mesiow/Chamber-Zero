@@ -12,9 +12,15 @@ var levels=[ "Nine", "Eight", "Seven", "Six", "Five", "Four" ,"Three", "Two", "O
 var levelPaths=[ preload("res://Levels/ChamberNine.tscn"), preload("res://Levels/ChamberEight.tscn") ]
 var gameComplete=false
 
+var background=AudioStreamPlayer.new()
+
 func _ready():
 	set_process_input(true)
-	#$BackgroundAmbience.play()
+	background.stream=load("res://Sounds/ambient_background.ogg")
+	background.volume_db=1
+	background.autoplay=true
+	background.play()
+	add_child(background)
 	pass 
 	
 func changeLevel():

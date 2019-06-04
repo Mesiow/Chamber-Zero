@@ -28,6 +28,7 @@ export var faceRight=false
 var worldNode
 
 func _ready():
+	randomize()
 	set_process(true)
 	set_physics_process(true)
 	worldNode=get_tree().get_root().get_node("/root/World")
@@ -134,10 +135,10 @@ func _on_Visibility_body_exited(body):
 	
 func _draw():
 	#draw_circle(Vector2(), detectRadius, visColor)
-	if target and showRay:
-		for hit in hitPos:
-			draw_circle((hit - global_position).rotated(-rotation), 5, laserColor)
-			draw_line(Vector2(), (hit - global_position).rotated(-rotation), laserColor)
+	#if target and showRay:
+	#	for hit in hitPos:
+	#		draw_circle((hit - global_position).rotated(-rotation), 5, laserColor)
+	#		draw_line(Vector2(), (hit - global_position).rotated(-rotation), laserColor)
 			#if faceRight:
 				#draw_circle((hit + global_position).rotated(rotation), 5, laserColor)
 				#draw_line(Vector2(), (hit + global_position).rotated(rotation), laserColor)
@@ -180,4 +181,5 @@ func _on_turretArea_body_exited(body):
 		if !disabled:
 			$Disabled.play()
 			disabled=true
+			$EyeLight.enabled=false
 	pass

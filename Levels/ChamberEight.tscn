@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/ChamberTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ShootablePlatform.tscn" type="PackedScene" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ExitDoor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/LevelNumber.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/LevelNumber.tscn" type="PackedScene" id=8]
 
 [node name="ChamberEight" type="Node"]
 
@@ -414,31 +415,31 @@ position = Vector2( 1232, 320 )
 z_index = 1
 
 [node name="NonShootablePlatform155" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
-position = Vector2( 1072, 288 )
+position = Vector2( 1040, 320 )
 z_index = 1
 
 [node name="NonShootablePlatform159" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
-position = Vector2( 1072, 160 )
+position = Vector2( 1040, 192 )
 z_index = 1
 
 [node name="NonShootablePlatform163" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
-position = Vector2( 1072, 160 )
+position = Vector2( 1040, 160 )
 z_index = 1
 
 [node name="NonShootablePlatform164" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
-position = Vector2( 1072, 128 )
+position = Vector2( 1040, 128 )
 z_index = 1
 
 [node name="NonShootablePlatform160" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
-position = Vector2( 1072, 192 )
+position = Vector2( 1040, 224 )
 z_index = 1
 
 [node name="NonShootablePlatform161" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
-position = Vector2( 1072, 224 )
+position = Vector2( 1040, 256 )
 z_index = 1
 
 [node name="NonShootablePlatform162" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
-position = Vector2( 1072, 256 )
+position = Vector2( 1039.95, 288 )
 z_index = 1
 
 [node name="NonShootablePlatform156" parent="Chamber/NonShootablePlatforms" instance=ExtResource( 3 )]
@@ -508,15 +509,18 @@ position = Vector2( 80, 608 )
 position = Vector2( 48, 608 )
 
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
-tile_data = PoolIntArray( 458818, 0, 0, 458820, 0, 0, 458822, 0, 0, 458824, 0, 0, 458826, 0, 0, 458828, 0, 0, 589890, 0, 0, 589892, 0, 0, 589894, 0, 0, 589896, 0, 0, 589898, 0, 0, 589900, 0, 0, 720962, 0, 0, 720964, 0, 0, 720966, 0, 0, 720968, 0, 0, 720970, 0, 0, 720972, 0, 0, 852034, 0, 0, 852036, 0, 0, 852038, 0, 0, 852040, 0, 0, 852042, 0, 0, 852044, 0, 0, 983106, 0, 0, 983108, 0, 0, 983110, 0, 0, 983112, 0, 0, 983114, 0, 0, 983116, 0, 0, 1114178, 0, 0, 1114180, 0, 0, 1114182, 0, 0, 1114184, 0, 0, 1114186, 0, 0, 1114188, 0, 0, 1245250, 0, 0, 1245252, 0, 0, 1245254, 0, 0, 1245256, 0, 0, 1245258, 0, 0, 1245260, 0, 0 )
+tile_data = PoolIntArray( 458816, 0, 0, 458818, 0, 0, 458820, 0, 0, 458822, 0, 0, 458824, 0, 0, 458826, 0, 0, 458828, 0, 0, 589888, 0, 0, 589890, 0, 0, 589892, 0, 0, 589894, 0, 0, 589896, 0, 0, 589898, 0, 0, 589900, 0, 0, 720960, 0, 0, 720962, 0, 0, 720964, 0, 0, 720966, 0, 0, 720968, 0, 0, 720970, 0, 0, 720972, 0, 0, 852032, 0, 0, 852034, 0, 0, 852036, 0, 0, 852038, 0, 0, 852040, 0, 0, 852042, 0, 0, 852044, 0, 0, 983104, 0, 0, 983106, 0, 0, 983108, 0, 0, 983110, 0, 0, 983112, 0, 0, 983114, 0, 0, 983116, 0, 0, 1114176, 0, 0, 1114178, 0, 0, 1114180, 0, 0, 1114182, 0, 0, 1114184, 0, 0, 1114186, 0, 0, 1114188, 0, 0, 1245248, 0, 0, 1245250, 0, 0, 1245252, 0, 0, 1245254, 0, 0, 1245256, 0, 0, 1245258, 0, 0, 1245260, 0, 0 )
 
 [node name="ExitDoor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1216, 256 )
+position = Vector2( 1217.95, 256 )
 
 [node name="Turret" parent="." instance=ExtResource( 6 )]
 position = Vector2( 112, 540 )
 faceRight = true
 
-[node name="LevelNumber" parent="." instance=ExtResource( 7 )]
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 100, 336 )
+
+[node name="LevelNumber" parent="." instance=ExtResource( 8 )]
 position = Vector2( 416, 288 )
 region_rect = Rect2( 1070, 960, 120, 180 )
