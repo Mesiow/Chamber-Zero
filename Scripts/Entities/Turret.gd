@@ -22,6 +22,7 @@ var newPosition
 var currentState
 var disabled=false
 var launched=false
+var launchForce=150
 export var faceRight=false
 
 var worldNode
@@ -55,11 +56,21 @@ func _physics_process(delta):
 	
 func _integrate_forces(state):
 	currentState=state
+	if faceRight:
+		scale=Vector2(-1, 1)
 	if teleported:
 		state.transform.origin=newPosition #updated rigid body position
 		if !disabled:
 			$Launched.play()
 		teleported=false
+	pass
+	
+func applyImpulse(portal): #apply impulse to turret based on direction of the portal it came out of
+	match portal.currentFacingDir:
+		portal.facing.UP:apply_impulse(Vector2(), Vector2(0, -launchForce))
+		portal.facing.DOWN:apply_impulse(Vector2(), Vector2(0, launchForce))
+		portal.facing.LEFT:apply_impulse(Vector2(), Vector2(-launchForce, 0))
+		portal.facing.RIGHT:apply_impulse(Vector2(), Vector2(launchForce, 0))
 	pass
 	
 func aim():
@@ -143,6 +154,8 @@ func teleport_Turret_Orange_Received(bluePortal):
 	if okToTeleport:
 		newPosition=bluePortal.global_position
 		teleported=true
+		applyImpulse(bluePortal)
+		disabled=true
 		$TeleportTimer.start()
 		okToTeleport=false
 	pass
@@ -152,6 +165,8 @@ func teleport_Turret_Blue_Received(orangePortal):
 	if okToTeleport:
 		newPosition=orangePortal.global_position
 		teleported=true
+		applyImpulse(orangePortal)
+		disabled=true
 		$TeleportTimer.start()
 		okToTeleport=false
 	pass
@@ -164,6 +179,6 @@ func _on_TeleportTimer_timeout():
 func _on_turretArea_body_exited(body):
 	if body.is_in_group("Player"):
 		if !disabled:
-			disabled=true
 			$Disabled.play()
+			disabled=true
 	pass

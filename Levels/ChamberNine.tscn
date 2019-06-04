@@ -12,6 +12,7 @@
 [node name="ChamberNine" type="Node"]
 
 [node name="Chamber" parent="." instance=ExtResource( 1 )]
+editor/display_folded = true
 
 [node name="ShootablePlatforms" type="Node" parent="Chamber"]
 editor/display_folded = true

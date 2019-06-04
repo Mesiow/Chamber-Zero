@@ -6,11 +6,35 @@ const orangePortal=preload("res://Scenes/OrangePortal.tscn")
 var blue=null
 var orange=null
 
-var currentLevel="ChamberNine"
+var currentLevel="ChamberNine" setget setCurrentLevel, getCurrentLevel
+var levels=[ "Nine", "Eight", "Seven", "Six", "Five", "Four" ,"Three", "Two", "One", "Zero" ]
+var levelPaths=[ preload("res://Levels/ChamberNine.tscn"), preload("res://Levels/ChamberEight.tscn") ]
+var gameComplete=false
 
 func _ready():
 	set_process_input(true)
+	$BackgroundAmbience.play()
 	pass 
+	
+func changeLevel():
+	if levels.size() <= 0:
+		gameComplete=true
+		return
+	levels.pop_front()
+	levelPaths.pop_front() #pop levels string and path to stay synced
+	
+	freeObjects()
+	var newLevel=levelPaths[0].instance()
+	call_deferred("add_child_below_node", $ChamberNine, newLevel) #add new level under chamber nine
+	$ChamberNine.queue_free() #delete chamber nine
+	
+	currentLevel="Chamber"+levels[0]
+	pass
+	
+func freeObjects():
+	blue.queue_free() #remove portals
+	orange.queue_free()
+	pass
 	
 func hit_Platform_Received(position, from, color):
 	if color == "blue":
@@ -29,6 +53,14 @@ func hit_Platform_Received(position, from, color):
 func _input(event):
 	if Input.is_action_pressed("Quit"):
 		get_tree().quit()
+	pass
+	
+func setCurrentLevel(level):
+	currentLevel=level
+	pass
+	
+func getCurrentLevel():
+	return currentLevel
 	pass
 	
 func _on_Player_playerDied(): #player died signal callback func

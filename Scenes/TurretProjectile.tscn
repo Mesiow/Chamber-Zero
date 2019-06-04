@@ -4,7 +4,6 @@
 [ext_resource path="res://Scripts/Projectile/TurretProjectile.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/ball.png" type="Texture" id=3]
 
-
 [node name="TurretProjectile" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 speed = 500

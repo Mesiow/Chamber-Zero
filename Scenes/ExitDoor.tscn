@@ -1,35 +1,41 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/World/ExitDoor.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Objects/DoorLocked.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=3]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 750.0
 height = 480.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20, 40 )
 
 [node name="ExitDoor" type="Area2D"]
 modulate = Color( 0.937255, 0.913725, 0.913725, 1 )
 position = Vector2( -10, 0 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="DetectArea" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.2, 0.06 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 0.333333, 0.333333, 0.333333, 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="DoorLight" type="Light2D" parent="."]
-position = Vector2( -8.9407e-008, 6.8 )
-scale = Vector2( 0.186667, -0.354667 )
+position = Vector2( -1.98404e-006, -1.83752e-006 )
+scale = Vector2( 0.186667, -0.309333 )
 texture = ExtResource( 3 )
 color = Color( 0.576471, 0, 0, 1 )
 energy = 1.5
+
+[node name="ExitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+shape = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_ExitDoor_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_ExitDoor_body_exited"]
+[connection signal="body_entered" from="ExitArea" to="." method="_on_ExitArea_body_entered"]

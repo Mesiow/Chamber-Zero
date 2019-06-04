@@ -5,7 +5,6 @@
 [ext_resource path="res://Sprites/b.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=4]
 
-
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 3
 emission_point_count = 1

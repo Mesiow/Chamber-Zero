@@ -7,8 +7,6 @@ enum facing{
 }
 var currentFacingDir setget ,getCurrentFacingDir
 
-var launchSpeed=300 #default
-
 func _ready():
 	randomize()
 	var element=randi() % portalEnterSounds.size() + 0
